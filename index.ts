@@ -1,6 +1,17 @@
-// את הקוד שלכם תכתבו כאן
+class Rectangle {
+    height: number;
+    width: number;
 
-//  1. Rectangle - מלבן
+    constructor (height:number,width:number) {
+        this.height = height;
+        this.width = width;
+    }
+    area():number{
+        return this.height*this.width;
+    }
+}
+
+
 
 //  2. Square - ריבוע
 
