@@ -23,60 +23,101 @@
 //     }
 // }
 
+// class Shape{
+
+//     constructor(){
+        
+//     }
+//     info():string {
+//         return `This is a shape`;
+//     }
+    
+// }
+
+// class Rectangle extends Shape {
+//     height: number;
+//     width: number;
+
+//     static Rec2(rectangle1:Rectangle,rectangle2:Rectangle):Rectangle  {
+//         return new Rectangle(rectangle1.height + rectangle2.height,rectangle1.width + rectangle2.width);
+//     }
+
+//     constructor (height:number,width:number) {
+//         super();
+//         this.height = height;
+//         this.width = width;
+//     }
+//     area():number{
+//         return this.height*this.width;
+//     }
+//     info(): string {
+//         return "this is a rectangle";
+//     }
+//     scale(x:number):Rectangle {
+//         this.height *= x;
+//         this.width *= x;
+//         return this;
+//     }
+
+// }
+// class ColoredRectangle extends Rectangle{
+//     color:string;
+
+//     constructor(height:number,width:number,color:string) {
+//         super(height,width);
+//         this.color = color;
+//     }
+//     info(): string {
+//         return `this is a ${this.color}rectangle`;
+//     }
+
+
+// }
+
+
 class Shape{
 
     constructor(){
         
     }
-    info():string {
-        return `This is a shape`;
+    draw():void {
+        console.log( `drawing a shape`);
     }
     
 }
 
-class Rectangle extends Shape {
-    height: number;
-    width: number;
-
-    static Rec2(rectangle1:Rectangle,rectangle2:Rectangle):Rectangle  {
-        return new Rectangle(rectangle1.height + rectangle2.height,rectangle1.width + rectangle2.width);
-    }
-
-    constructor (height:number,width:number) {
+class Triangle extends Shape {
+    constructor() {
         super();
-        this.height = height;
-        this.width = width;
     }
-    area():number{
-        return this.height*this.width;
+    draw(): void {
+        console.log( `drawing a triangle`)
     }
-    info(): string {
-        return "this is a rectangle";
-    }
-    scale(x:number):Rectangle {
-        this.height *= x;
-        this.width *= x;
-        return this;
-    }
-
 }
-class ColoredRectangle extends Rectangle{
-    color:string;
-
-    constructor(height:number,width:number,color:string) {
-        super(height,width);
-        this.color = color;
+class Circle extends Shape {
+    constructor(){ super()}
+    draw(): void {
+        console.log( `drawing a circle`)
     }
-    info(): string {
-        return `this is a ${this.color} rectangle`;
+}
+class Square extends Shape {
+    constructor(){ super()}
+    draw(): void {
+        console.log( `drawing a square`)
     }
+}
+let circle = new Circle();
+let triangle = new Triangle();
+let square = new Square();
 
+let shapesArray: Shape[] = [circle, triangle, square];
 
+for (let shape of shapesArray) {
+    shape.draw();
 }
 
-
-// 3. Shape - צורה
-
-// 4. Method Chaining
-
-// 5. Shape with draw method
+function renderShapes(arr:Shape[]):void {
+    arr.forEach((item) => {
+        item.draw
+    })
+}
